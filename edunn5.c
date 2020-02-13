@@ -7,13 +7,13 @@
 #include<stdio.h>
 #include<time.h>
 
-int print(int x[]);
 int rollDie(void);
 int prompt(void);
+int print(int one, int two, int three, int four, int five, int six, int seven, int eight, int nine, int ten);
 
 int main(void)
 {	
-	int i;
+	int i, one = 0, two = 0, three = 0, four = 0, five = 0, six = 0, seven = 0, eight = 0, nine = 0, ten = 0;
 	srand(time(NULL));
 	int nums[10];
 
@@ -21,24 +21,51 @@ int main(void)
 	{
 		nums[i] = 0;
 	}
-	
 	int n = prompt();
 	for(i = 0; i < n; i++)
 	{
-		nums[rollDie() - 1] = nums[rollDie() - 1] + 1;
-	}
-
-
-	print(nums);
-
+		switch(rollDie())
+		{
+			case 1:
+				one++;
+				break;
+			case 2: 
+				two++;
+				break;
+			case 3:
+				three++;
+				break;
+			case 4:
+				four++;
+				break;
+			case 5:
+				five++;
+				break;
+			case 6:
+				six++;
+				break;
+			case 7:
+				seven++;
+				break;
+			case 8:
+				eight++;
+				break;
+			case 9:
+				nine++;
+				break;
+			case 10:
+				ten++;
+				break;
+		}
+}
+	print(one, two, three, four, five, six, seven, eight, nine, ten);
 	return EXIT_SUCCESS;
 }
-
 
 int prompt(void)
 {
 	int choice = 0;
-	printf("How many times would you like to roll the 10 sided die?");
+	printf("How many times would you like to roll the 10 sided die? ");
 	scanf("%d",&choice);
 	return choice;
 }
@@ -51,18 +78,19 @@ int rollDie(void)
 }	
 
 
-int print(int x[])
+int print(int one, int two, int three, int four, int five, int six, int seven, int eight, int nine, int ten)
 {
-	printf("%d ones",x[0]);
-	printf("\n%d twos",x[1]);
-	printf("\n%d threes",x[2]);
-	printf("\n%d four",x[3]);
-	printf("\n%d fives",x[4]);
-	printf("\n%d sixes",x[5]);
-	printf("\n%d sevens",x[6]);
-	printf("\n%d eights",x[7]);
-	printf("\n%d nines",x[8]);
-	printf("\n%d tens\n",x[9]);
+	printf("You had:\n");
+	printf("\n%d ones\n",one);
+	printf("\n%d twos\n",two);
+	printf("\n%d threes\n",three);
+	printf("\n%d four\n",four);
+	printf("\n%d fives\n",five);
+	printf("\n%d sixes\n",six);
+	printf("\n%d sevens\n",seven);
+	printf("\n%d eights\n",eight);
+	printf("\n%d nines\n",nine);
+	printf("\n%d tens\n",ten);
 }
 
 
