@@ -1,3 +1,8 @@
+/*Elijah Dunn
+ * 3/7/2020
+ * csc-251
+ * lab 7
+ * */
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
